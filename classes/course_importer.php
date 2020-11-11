@@ -118,14 +118,14 @@ class course_importer {
             throw $e;
         } finally {
             // Reset some settings.
-            $summary = $course->summary;
-            $summaryformat = $course->summaryformat;
+            // $summary = $course->summary;
+            // $summaryformat = $course->summaryformat;
             $enddate = $course->enddate;
             $timecreated = $course->timecreated;
             // Reload course.
             $course = $DB->get_record('course', ['id' => $courseid]);
-            $course->summary = $summary;
-            $course->summaryformat = $summaryformat;
+            // $course->summary = $summary;
+            // $course->summaryformat = $summaryformat;
             $course->enddate = $enddate;
             $course->timecreated = $timecreated;
             $DB->update_record('course', $course);
